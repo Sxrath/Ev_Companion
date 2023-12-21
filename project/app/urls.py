@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import CreateReservation, ListChargingStations,ListReservation,CreateFeedback,Listfeedback,Createpost,Listposts,Createreply,UpdateReservation,DestroyReservation,DeleteReservationTimeout
+from .views import CreateReservation, ListChargingStations,ListReservation,CreateFeedback,Listfeedback,Createpost,Listposts,Createreply,UpdateReservation,DestroyReservation,DeleteReservationTimeout,Register
 
 urlpatterns = [
     #
-
+    path('register/',Register.as_view(),name='register'),
     path('charging-stations/<int:location_id>/', ListChargingStations.as_view(), name='charging_stations_by_location'),
     path('reservation/',CreateReservation.as_view(),name='reservation'),
     path('listreservations/',ListReservation.as_view(),name='reservationlist'),
